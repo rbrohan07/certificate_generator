@@ -43,14 +43,17 @@ const generatePDF = async (name) =>
   const pages = pdfDoc.getPages();
   const firstPage = pages[0];
 
+
   // Draw a string of text diagonally across the first page
   firstPage.drawText(name, {
-    x: 130,
+    
+    x: 700*3/name.length,
     y: 365,
-    size: 50,
+    size: 35,
     font: SanChezFont,
     color: rgb(0.3, 0.2, 0),
     rotate: degrees(0.5),
+    
   });
 
   // Serialize the PDFDocument to bytes (a Uint8Array)
